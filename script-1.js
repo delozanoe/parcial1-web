@@ -45,7 +45,7 @@ function initializeList(products) {
         `<div class="card">
        <div class="row g-0">
          <div class="col-2">
-           <a href="/index-3.html" onclick="goDetail('${product.id}')">
+           <a href="index-3.html"  onclick="goDetail('${product.id}')">
              <img
                src= ${product.picture}
                alt="phone"

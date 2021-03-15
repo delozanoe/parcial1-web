@@ -61,7 +61,7 @@ function initializeList() {
             </div>
             <div class="col-2 center-items">
 
-             <a onclick="goDetail('${product.id}')" href="/index-3.html"
+             <a onclick="goDetail('${product.id}')" href="index-3.html"
                 ><button class="button-config button-fav">
                   Ver artículo
                 </button></a
