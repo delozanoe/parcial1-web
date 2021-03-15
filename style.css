@@ -1,0 +1,219 @@
+body {
+  background-color: #e5e5e5;
+}
+/*Headers style start*/
+.header {
+  width: 100%;
+  height: 80px;
+  left: 0px;
+  top: 0px;
+
+  background: linear-gradient(
+    270deg,
+    #745ece 0%,
+    rgba(105, 72, 237, 0.41) 47.4%,
+    #5e63c8 82.29%
+  );
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.logoImg {
+  margin: 8px 100px 12px;
+}
+.inputItem {
+  height: 47px;
+  border: 1px solid #c6c2c2;
+  box-sizing: border-box;
+}
+.inputText {
+  padding: 9px 9px 8px;
+  width: 100%;
+}
+.submitInput {
+  width: 56px;
+  background: #e5e5e5;
+  padding: 5px 10px 6px 10px;
+}
+.formsearch {
+  display: flex;
+  margin-top: 18px;
+  margin-bottom: 15px;
+  align-items: center;
+}
+#heartButton {
+  padding: 18px 21px 22px;
+}
+/*Headers style end*/
+
+/*Article index-1 style start*/
+.phoneImage{
+  width: 180px;
+  height: 180px;
+}
+.card-continer {
+  margin: 77px 100px 0px;
+}
+.card-continer-title {
+  margin: 28px 100px 0px;
+}
+.card-fav-continer{
+  margin-top: 0px;
+}
+
+.card {
+  width: 1240px;
+  height: 221px;
+  padding-top: 30px;
+  border-radius: 0px;
+}
+
+.priceTitle {
+  font-size: 24px;
+  width: 160px;
+  height: 35px;
+}
+
+.cardName {
+  margin-top: 47px;
+  margin-bottom: 74px;
+  size: 18px;
+}
+.cityname {
+  font-size: 14px;
+}
+.smallImagetrue {
+  width: 20px;
+  height: 20px;
+  background: url(/assets/Rectangle\ 4.png);
+  background-repeat: no-repeat;
+  margin-top: 4px;
+}
+.smallImagefalse{
+  display: none;
+}
+
+/*Article index 2*/
+
+.checkbox-item {
+  margin-top: 70px;
+  margin-left: 40px;
+  width: 20px;
+  height: 20px;
+  color: #c4c4c4;
+  background: #c4c4c4;
+}
+.checkbox-item-1 {
+  margin-left: 40px;
+  width: 20px;
+  height: 20px;
+  color: #c4c4c4;
+  background: #c4c4c4;
+}
+
+.button-config {
+  width: 200px;
+  height: 51px;
+  color: white;
+  background: #c968cb;
+  border-radius: 20px;
+  border-color: white;
+}
+.button-delete {
+  background: #d3cbcb;
+  border-color: white;
+}
+
+
+.center-items {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 18px;
+}
+
+.card-head {
+  width: 1240px;
+  height: 89px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+#favTitle {
+  position: relative;
+  margin-top: 25px;
+  margin-left: 100px;
+}
+.description {
+  font-size: 14px;
+  color: #b8acac;
+  text-align: justify;
+  margin-bottom: 31px;
+}
+.description-section {
+  background-color: white;
+  width: 1240px;
+  height: auto;
+  padding: 54px 50px 0px 50px;
+}
+
+.description-image {
+  width: 563px;
+  height: 520px;
+}
+
+.title-description {
+  margin: 23px 0px;
+  font-size: 28px;
+}
+.button-descript {
+  width: 312px;
+  height: 51px;
+  left: 978px;
+  top: 416px;
+  margin-top: 9px;
+  margin-bottom: 9px;
+  font-size: 24px;
+  background: #c968cb;
+  border-radius: 20px;
+}
+
+.add-fav-color{
+  background-color: #8C86D7;
+}
+
+.title-descript{
+  margin-top: 31px;
+  font-size: 24px;
+}
+
+.text-price{
+  margin-bottom:48px;
+}
+.p-descript{
+  height:35px;
+}
+
+#staticBackdrop{
+top: 170px;
+}
+
+.sizemodal{
+  height: 364px;
+width: 578px;
+text-align: center;
+}
+.modal-body{
+  height: 51px;
+width: 312px;
+margin-left: 140px;
+margin-top: 84px;
+}
+#yesCancel{
+  width: 145px;
+height: 51px;
+
+color: white;
+background: #8C86D7;
+border-radius: 20px;
+}

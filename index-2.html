@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <!--CSS link-->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="script-2.js" async></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="row">
+        <div class="col-1 logoImg">
+          <a href="/index-1.html"
+            ><img src="/assets/LOGO.png" alt="logo_imagen"
+          /></a>
+        </div>
+        <div class="col">
+          <div class="formsearch">
+            <input
+              type="text"
+              class="inputText inputItem"
+              placeholder="Filtar por categoría"
+            />
+            <div class="submitInput inputItem">
+              <img src="/assets/ic_Search@2x 1.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="col-1" id="heartButton">
+          <a href="/index-2.html"
+            ><img src="/assets/Rectangle 21.png" alt=""
+          /></a>
+        </div>
+      </div>
+    </header>
+    <section>
+      <h2 id="favTitle">Favoritos</h2>
+      <div class="row card-continer-title" id="menu-fav">
+        <div id="card-head">
+          <div class="row card-head">
+            <div class="col-1">
+              <input type="checkbox" class="checkbox-item-1" value="checked" id="maxCheckBox" />
+            </div>
+            <div class="col">
+              <button class="button-config button-delete" id="deleteallfav">Eliminar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="cardContinerFav" class="card-continer-title card-fav-continer">
+      </div>
+    </section>
+  </body>
+</html>
