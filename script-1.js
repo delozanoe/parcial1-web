@@ -1,9 +1,8 @@
-
 let requestOptions = {
   method: "GET",
   redirect: "follow",
 };
-var products;
+let products;
 
 fetch(
   "https://gist.githubusercontent.com/jhonatan89/719f8a95a8dce961597f04b3ce37f97b/raw/4b7f1ac723a14b372ba6899ce63dbd7c2679e345/products-ecommerce",
@@ -11,32 +10,35 @@ fetch(
 )
   .then((response) => response.json())
   .then((result) => {
-    
     products = result["items"];
-    console.log(products);
+
     priceFormatter(products);
-    
+
     initializeList(products);
   })
-  .catch((error) => console.log("error", error));
+  .catch((error) => {
+    throw error;
+  });
 
-currencyFormatter = (price, currency) =>{
-    var value = price;
-    var result = value.toLocaleString('es-ar', {
-        style: 'currency',
-        currency: currency,
-        minimumFractionDigits: 2
-    });
-    return result;
-}
+currencyFormatter = (price, currency) => {
+  let value = price;
+  let result = value.toLocaleString("es-ar", {
+    style: "currency",
+    currency: currency,
+    minimumFractionDigits: 2,
+  });
+  return result;
+};
 
-priceFormatter = (data) =>{
-    for (let i = 0; i < data.length; i++) {
-        const product = data[i];
-        product['price'].amount = currencyFormatter(product['price'].amount,product['price'].currency);
-    }
-}
-
+priceFormatter = (data) => {
+  for (let i = 0; i < data.length; i++) {
+    const product = data[i];
+    product["price"].amount = currencyFormatter(
+      product["price"].amount,
+      product["price"].currency
+    );
+  }
+};
 
 function initializeList(products) {
   const htmlInput = products
@@ -73,17 +75,15 @@ function initializeList(products) {
   cardListContiner.innerHTML = htmlInput;
 }
 
-function goDetail(id){
-    //alert('Probando' + id);
-    localStorage.setItem('idDetail', JSON.stringify(searchPhone(id)));
-    
-
+function goDetail(id) {
+  //alert('Probando' + id);
+  localStorage.setItem("idDetail", JSON.stringify(searchPhone(id)));
 }
 
-function searchPhone(id){
-  var ans;
-  products.forEach(product => {
-    if(product.id  == id){
+function searchPhone(id) {
+  let ans;
+  products.forEach((product) => {
+    if (product.id == id) {
       ans = product;
     }
   });
@@ -91,56 +91,41 @@ function searchPhone(id){
 }
 
 /**Manejo de todos los favoritos! */
-addFavorites = (id) =>{
-  alert(id);
+addFavorites = (id) => {
 
-  var favorities = JSON.parse(localStorage.getItem("favorities"));
-  var phone = searchPhone(id);
+  let favorities = JSON.parse(localStorage.getItem("favorities"));
+  let phone = searchPhone(id);
   //First fav
-  if(favorities.length = 0){
+  if ((favorities.length == 0)) {
     favorities = [];
     favorities.push(phone);
-  }
-  else{
+  } else {
     favorities.push(phone);
   }
 
   localStorage.setItem("favorities", JSON.stringify(favorities));
-}
-
-/**Filtrar por categoria! 
- * Pasos 1: mirar la categoria que nos entra
- * 2: Recorrer los productos 
- * 3: Mostraros
-*/
-const filterCategories = async searchText =>{
- // console.log(operators);
-  matchesCategori = products.filter(product => {
-          
-          const regex = new RegExp(`${searchText}`, 'gi');
-
-          return product['categories'].value.match(regex);
-      });
-
-    initializeList(matchesCategori);
 };
-var searchCategories = document.getElementById('filterCategories');
 
-prueba = () =>{
-  var newProducts = [];
-  var objectiveCategory = searchCategories.value;
+/**Filtrar por categoria!
+ * Pasos 1: mirar la categoria que nos entra
+ * 2: Recorrer los productos
+ * 3: Mostraros
+ */
 
-  products.forEach(product => {
-    var categoriesOfProduct = product.categories;
-    categoriesOfProduct.forEach(category => {
-      if(category == objectiveCategory){
+let searchCategories = document.getElementById("filterCategories");
+
+prueba = () => {
+  let newProducts = [];
+  let objectiveCategory = searchCategories.value;
+
+  products.forEach((product) => {
+    let categoriesOfProduct = product.categories;
+    categoriesOfProduct.forEach((category) => {
+      if (category == objectiveCategory) {
         newProducts.push(product);
       }
     });
   });
 
   initializeList(newProducts);
-}
-
-
-
+};

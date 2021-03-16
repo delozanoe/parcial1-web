@@ -76,7 +76,7 @@ body {
 .cardName {
   margin-top: 47px;
   margin-bottom: 74px;
-  size: 18px;
+  font-size: 18px;
 }
 .cityname {
   font-size: 14px;
@@ -84,7 +84,7 @@ body {
 .smallImagetrue {
   width: 20px;
   height: 20px;
-  background: url(/assets/Rectangle\ 4.png);
+  background: url(assets/Rectangle\ 4.png);
   background-repeat: no-repeat;
   margin-top: 4px;
 }

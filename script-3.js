@@ -1,6 +1,6 @@
-var product;
-var favorities = JSON.parse(localStorage.getItem("favorities"));
-var isFav, indexFav;
+let product;
+let favorities = JSON.parse(localStorage.getItem("favorities"));
+let isFav, indexFav;
 /**Get item to a product */
 getItem = () => {
   product = JSON.parse(localStorage.getItem("idDetail"));
@@ -12,14 +12,14 @@ getItem = () => {
 getItem();
 
 function fillInfo(product) {
-  var imagePhone = document.getElementById("imagePhone");
-  var descriptionText = document.getElementById("descriptionText");
-  var condition = document.getElementById("condition");
-  var productName = document.getElementById("productName");
-  var productPrice = document.getElementById("productPrice");
-  var titleFav = document.getElementById("favTitle");
-  var favButton = document.getElementById("favButton");
- var nameModal = document.getElementById('nameModal');
+  let imagePhone = document.getElementById("imagePhone");
+  let descriptionText = document.getElementById("descriptionText");
+  let condition = document.getElementById("condition");
+  let productName = document.getElementById("productName");
+  let productPrice = document.getElementById("productPrice");
+  let titleFav = document.getElementById("favTitle");
+  let favButton = document.getElementById("favButton");
+ let nameModal = document.getElementById("nameModal");
   //Lests create the info
   imagePhone.src = product.picture;
   descriptionText.textContent = product.description;
@@ -34,10 +34,10 @@ function fillInfo(product) {
   productPrice.textContent = product["price"].amount;
 
   //Titulo fav
-  var categories = [];
+  let categories = [];
   for (let i = 0; i < product["categories"].length; i++) {
     const category = product["categories"][i];
-    console.log(category);
+    
     if (product["categories"].length - 1 == i) {
       categories += category;
     } else {
@@ -52,7 +52,7 @@ function fillInfo(product) {
 
 /**Manejo de todos los favoritos! */
 addFavorites = () => {
-  //var phone = searchPhone(id);
+  //let phone = searchPhone(id);
   //First fav
   if (favorities == null) {
     favorities = [];
@@ -69,7 +69,7 @@ addFavorites = () => {
 
 deleteFavorities = () => {
   if (favorities != null) {
-    if ((favorities.length = 1)) {
+    if ((favorities.length == 1)) {
       localStorage.clear();
     } else {
       delete favorities[indexFav];
@@ -89,7 +89,7 @@ manageFav = () => {
 };
 
 function checkfavorites() {
-  var isFav = false;
+  let isFav = false;
   if (favorities !== null) {
     favorities.forEach(function (value, i) {
       if (product.id == value.id) {

@@ -1,6 +1,6 @@
-var favorities = JSON.parse(localStorage.getItem("favorities"));
-var maxCheckBox = document.getElementById("maxCheckBox");
-var buttondelete = document.getElementById("deleteallfav");
+let favorities = JSON.parse(localStorage.getItem("favorities"));
+let maxCheckBox = document.getElementById("maxCheckBox");
+let buttondelete = document.getElementById("deleteallfav");
 document.getElementById("deleteallfav").disabled = true;
 
 function goDetail(id) {
@@ -9,7 +9,7 @@ function goDetail(id) {
 }
 
 function searchPhone(id) {
-  var ans;
+  let ans;
   favorities.forEach((product) => {
     if (product.id == id) {
       ans = product;
@@ -19,13 +19,13 @@ function searchPhone(id) {
 }
 
 function initializeList() {
-  var favorities = JSON.parse(localStorage.getItem("favorities"));
+  let favorities = JSON.parse(localStorage.getItem("favorities"));
   cardContinerFav = document.getElementById("cardContinerFav");
   menufav = document.getElementById("menu-fav");
   if (favorities == null) {
-    var h2Title = document.createElement("h2");
+    let h2Title = document.createElement("h2");
     h2Title.textContent = "Ups, parece que aun no tienes favoritos!";
-    var h3Title = document.createElement("h3");
+    let h3Title = document.createElement("h3");
     h3Title.textContent = "Añade y acá apareceran!";
 
     cardContinerFav.innerHTML = "";
@@ -78,8 +78,8 @@ function initializeList() {
 
 initializeList();
 
-maxCheckBox.addEventListener("click", function (event) {
-  var checkboxs = document.getElementsByClassName("checkbox-item");
+maxCheckBox.addEventListener("click", function () {
+  let checkboxs = document.getElementsByClassName("checkbox-item");
 
   for (let i = 0; i < checkboxs.length; i++) {
     const checkbox = checkboxs[i];
@@ -93,14 +93,14 @@ maxCheckBox.addEventListener("click", function (event) {
   enableButton();
 });
 
-buttondelete.addEventListener("click", function (event) {
+buttondelete.addEventListener("click", function () {
   if (maxCheckBox.checked) {
     localStorage.clear();
   } else {
     //Toca mirar uno por uno
-    var checkboxs = document.getElementsByClassName("checkbox-item");
+    let checkboxs = document.getElementsByClassName("checkbox-item");
     //Manage delete fav
-    var newFavs = [];
+    let newFavs = [];
     for (let i = 0; i < checkboxs.length; i++) {
       const checkbox = checkboxs[i];
       if (checkbox.checked) {
@@ -117,7 +117,7 @@ buttondelete.addEventListener("click", function (event) {
 });
 
 enableButton = () => {
-  var checked = checkToEnable();
+  let checked = checkToEnable();
   if (checked) {
     document.getElementById("deleteallfav").disabled = false;
     document.getElementById("deleteallfav").style.background = "#e1677d";
@@ -128,9 +128,9 @@ enableButton = () => {
 };
 
 checkToEnable = () => {
-  var checkboxs = document.getElementsByClassName("checkbox-item");
+  let checkboxs = document.getElementsByClassName("checkbox-item");
 
-  var cont = 0;
+  let cont = 0;
   for (let i = 0; i < checkboxs.length; i++) {
     const checkbox = checkboxs[i];
 
